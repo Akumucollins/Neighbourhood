@@ -2,7 +2,7 @@
 
 # The Neighbourhood
 
-## Tuesday, November 4 2020 ;
+## Thursday, November 4 2020 ;
 
 ---
 
