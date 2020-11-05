@@ -38,7 +38,7 @@ To get the code..
 Cloning the repository:
  https://github.com/Akumucollins/Neighbourhood.git
   
-Move to the folder and install requirements
+Move to the folder and install requirements using
   ```bash
   cd Hood
   pip install -r requirements.txt
