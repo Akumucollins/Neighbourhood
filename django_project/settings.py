@@ -1,5 +1,8 @@
 from pathlib import Path
 import django_heroku
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 import dj_database_url
 from decouple import config,Csv
 
@@ -27,9 +30,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'calories',
+    'neighbourhood',
     'bootstrap4',
     'crispy_forms',
+    'cloudinary',
 ]
 
 MIDDLEWARE = [
@@ -154,8 +158,14 @@ EMAIL_PORT = config('EMAIL_PORT')
 EMAIL_HOST_USER = config('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
 
+cloudinary.config( 
+  cloud_name = config('CLOUD_NAME'), 
+  api_key = config('CLOUD_API'),
+  api_secret = config('API_SECRET'),
+)
+
 # Configure Django App for Heroku.
 django_heroku.settings(locals())
 
 LOGIN_REDIRECT_URL = '/'
-LOGOUT_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = 'logout'
